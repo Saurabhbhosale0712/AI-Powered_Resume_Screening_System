@@ -7,15 +7,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-import spacy
-import os
+def load_spacy_model():
+    try:
+        return spacy.load("en_core_web_sm")
+    except OSError:
+        os.system("python -m spacy download en_core_web_sm")
+        return spacy.load("en_core_web_sm")
 
-# Ensure spaCy model is available
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    os.system("python -m spacy download en_core_web_sm")  # Install the model
-    nlp = spacy.load("en_core_web_sm")  # Load again after installation
+nlp = load_spacy_model()
 
 
 
