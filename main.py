@@ -66,7 +66,7 @@ if uploaded_files and job_description:
          # Display Top N resumes selected by the user
         st.subheader(f"🏆 **Top {top_n} Resume(s) Based on Match Score**")
         for i in range(min(top_n, len(resume_scores))):
-            st.write(f"🥇 **{resume_scores[i][0]}** → Match Score: {resume_scores[i][1]}%")
+            st.write(f"🥇 **{resume_scores[i][0]}**  ==>>   Match Score: {resume_scores[i][1]}%")
 
         
         # Display ranked resumes
@@ -76,22 +76,35 @@ if uploaded_files and job_description:
         if high_matches:
            # st.success("✅ **High Match Resumes (≥ 70%)**")
             for name, score in high_matches:
-                st.write(f"📌 **{name}** → Match Score: {score}%")
+                st.write(f"📌 **{name}**  → Match Score: {score}%")
 
         # Medium Matches
         if medium_matches:
            # st.warning("⚠️ **Medium Match Resumes (40% - 69%)**")
             for name, score in medium_matches:
-                st.write(f"📌 **{name}** → Match Score: {score}%")
+                st.write(f"📌 **{name}**  → Match Score: {score}%")
 
         # Low Matches
         if low_matches:
             #st.error("❌ **Low Match Resumes (< 40%)**")
             for name, score in low_matches:
                 st.write(f"📌 **{name}** → Match Score: {score}%")
-        # Show Matched Keywords
-        with st.expander("🔍 **View Matched Keywords**"):
-           st.write(", ".join(matched_keywords))
+        # Extract matched keywords
+        matched_keywords = list(resume_keywords & job_desc_keywords)
+
+        # Checkbox to show matched keywords
+        if st.checkbox("🔍 Show Matched Keywords"):
+            if matched_keywords:
+               st.write(", ".join(matched_keywords))
+           else:
+               st.write("No matched keywords found.")
+
+
+
+        
+        # # Show Matched Keywords
+        # with st.expander("🔍 **View Matched Keywords**"):
+        #    st.write(", ".join(matched_keywords))
 
 
 
