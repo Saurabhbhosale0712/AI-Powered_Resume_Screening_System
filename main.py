@@ -8,21 +8,21 @@ from sklearn.metrics.pairwise import cosine_similarity
 import subprocess
 import sys
 
-# # Ensure the model is downloaded
-# try:
-#     nlp = spacy.load("en_core_web_sm")
-# except OSError:
-#     subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
-#     nlp = spacy.load("en_core_web_sm")  # Load model after installation
-
-
-
-# Load NLP model
+# Ensure the model is downloaded
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    st.error("Spacy model 'en_core_web_sm' not found. Run `python -m spacy download en_core_web_sm` to install it.")
-    st.stop()
+    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")  # Load model after installation
+
+
+
+# # Load NLP model
+# try:
+#     nlp = spacy.load("en_core_web_sm")
+# except OSError:
+#     st.error("Spacy model 'en_core_web_sm' not found. Run `python -m spacy download en_core_web_sm` to install it.")
+#     st.stop()
 
 # Streamlit UI
 st.title("📄 Multi-Resume Screening App")
