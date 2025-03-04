@@ -6,5 +6,13 @@ scikit-learn
 fuzzywuzzy
 pandas
 streamlit
+pdfminer.six
+python-docx
 
 
+
+# streamlit →  For building the web app
+# spacy →  For NLP-based keyword extraction
+# pdfminer.six →  For extracting text from PDF files
+# python-docx →  For extracting text from DOCX files
+# scikit-learn →  For TF-IDF + Cosine Similarity calculation
