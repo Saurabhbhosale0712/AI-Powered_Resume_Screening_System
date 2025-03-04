@@ -89,9 +89,9 @@ if uploaded_files and job_description:
             #st.error("❌ **Low Match Resumes (< 40%)**")
             for name, score in low_matches:
                 st.write(f"📌 **{name}** → Match Score: {score}%")
-
-       
-
+        # Show Matched Keywords
+        with st.expander("🔍 **View Matched Keywords**"):
+           st.write(", ".join(matched_keywords))
 
 
 
