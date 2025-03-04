@@ -190,4 +190,3 @@ streamlit run app.py
 ### **🚀 Conclusion**
 This **Resume Screening App** effectively filters resumes **based on job descriptions**, using **TF-IDF & Cosine Similarity**. It helps recruiters quickly find the **best-fit resumes** in a **ranked order**.  
 
-Now, you’re ready to **build and improve** your resume screening system! 🚀 Let me know if you have any questions. 😊
