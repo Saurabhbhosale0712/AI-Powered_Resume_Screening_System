@@ -86,7 +86,7 @@ if uploaded_files and job_description:
         for i in range(min(top_n, len(resume_scores))):
             st.write(f"🥇 **{resume_scores[i][0]}** → Match Score: {resume_scores[i][1]}%")
 
---- 
+
 
 
 #import os
