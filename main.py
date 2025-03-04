@@ -66,7 +66,7 @@ if uploaded_files and job_description:
          # Display Top N resumes selected by the user
         st.subheader(f"🏆 **Top {top_n} Resume(s) Based on Match Score**")
         for i in range(min(top_n, len(resume_scores))):
-            st.write(f"🥇 **{resume_scores[i][0]}**  ==>>   Match Score: {resume_scores[i][1]}%")
+            st.write(f"🥇 **{resume_scores[i][0]}**  → Match Score: {resume_scores[i][1]}%")
 
         
         # Display ranked resumes
@@ -93,6 +93,7 @@ if uploaded_files and job_description:
         matched_keywords = list(resume_keywords & job_desc_keywords)
 
       
+
 
 # # Add a section for missing (unmatched) keywords
 # st.subheader("❌ Keywords Missing in Each Resume")
