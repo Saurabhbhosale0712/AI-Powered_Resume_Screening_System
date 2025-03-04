@@ -1,6 +1,6 @@
-### **🎯 Project: AI-Powered Resume Screening System**  
+### ** Project: AI-Powered Resume Screening System**  
 
-#### **📌 Goal of the Project:**  
+#### ** Goal of the Project:**  
 To develop an AI-driven **resume screening system** that efficiently ranks multiple resumes based on their similarity to a given job description, using **Natural Language Processing (NLP) and Machine Learning techniques**.  
 
 ---
@@ -16,11 +16,11 @@ This project aims to **automate** and **optimize** the resume screening process 
 ---
 
 ### **🎯 Objectives:**  
-1️⃣ **Automate Resume Parsing** – Extract key information from **PDF/DOCX** resumes.  
-2️⃣ **Text Processing with NLP** – Identify **important keywords** from resumes and job descriptions.  
-3️⃣ **Ranking Resumes Using Similarity Matching** – Implement **TF-IDF + Cosine Similarity** to compute match scores.  
-4️⃣ **Classify Resumes into Tiers** – Categorize resumes into **High, Medium, and Low match levels**.  
-5️⃣ **Enable Top N Selection** – Allow recruiters to **select and view the top-ranked resumes** instantly.  
+1 **Automate Resume Parsing** – Extract key information from **PDF/DOCX** resumes.  
+2️ **Text Processing with NLP** – Identify **important keywords** from resumes and job descriptions.  
+3️ **Ranking Resumes Using Similarity Matching** – Implement **TF-IDF + Cosine Similarity** to compute match scores.  
+4️ **Classify Resumes into Tiers** – Categorize resumes into **High, Medium, and Low match levels**.  
+5️ **Enable Top N Selection** – Allow recruiters to **select and view the top-ranked resumes** instantly.  
 
 ---
 
