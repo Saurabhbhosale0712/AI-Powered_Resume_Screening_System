@@ -95,9 +95,9 @@ if uploaded_files and job_description:
         # Checkbox to show matched keywords
         if st.checkbox("🔍 Show Matched Keywords"):
             if matched_keywords:
-               st.write(", ".join(matched_keywords))
-           else:
-               st.write("No matched keywords found.")
+                st.write(", ".join(matched_keywords))
+            else:
+                st.write("No matched keywords found.")
 
 
 
