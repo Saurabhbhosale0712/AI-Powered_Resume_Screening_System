@@ -15,15 +15,6 @@ except OSError:
     subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
     nlp = spacy.load("en_core_web_sm")  # Load model after installation
 
-
-
-# # Load NLP model
-# try:
-#     nlp = spacy.load("en_core_web_sm")
-# except OSError:
-#     st.error("Spacy model 'en_core_web_sm' not found. Run `python -m spacy download en_core_web_sm` to install it.")
-#     st.stop()
-
 # Streamlit UI
 st.title("📄 Multi-Resume Screening App")
 st.write("Upload multiple resumes (PDF/DOCX) and enter a job description to rank them based on relevance.")
@@ -71,6 +62,13 @@ if uploaded_files and job_description:
         medium_matches = [res for res in resume_scores if 40 <= res[1] < 70]
         low_matches = [res for res in resume_scores if res[1] < 40]
 
+        
+         # Display Top N resumes selected by the user
+        st.subheader(f"🏆 **Top {top_n} Resume(s) Based on Match Score**")
+        for i in range(min(top_n, len(resume_scores))):
+            st.write(f"🥇 **{resume_scores[i][0]}** → Match Score: {resume_scores[i][1]}%")
+
+        
         # Display ranked resumes
         st.subheader("📊 Resume Ranking Results")
 
@@ -92,10 +90,7 @@ if uploaded_files and job_description:
             for name, score in low_matches:
                 st.write(f"📌 **{name}** → Match Score: {score}%")
 
-        # Display Top N resumes selected by the user
-        st.subheader(f"🏆 **Top {top_n} Resume(s) Based on Match Score**")
-        for i in range(min(top_n, len(resume_scores))):
-            st.write(f"🥇 **{resume_scores[i][0]}** → Match Score: {resume_scores[i][1]}%")
+       
 
 
 
