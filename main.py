@@ -5,6 +5,17 @@ from pdfminer.high_level import extract_text as extract_text_from_pdf
 from docx import Document
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import subprocess
+import sys
+
+# # Ensure the model is downloaded
+# try:
+#     nlp = spacy.load("en_core_web_sm")
+# except OSError:
+#     subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+#     nlp = spacy.load("en_core_web_sm")  # Load model after installation
+
+
 
 # Load NLP model
 try:
