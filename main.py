@@ -92,18 +92,7 @@ if uploaded_files and job_description:
         # Extract matched keywords
         matched_keywords = list(resume_keywords & job_desc_keywords)
 
-        # Add a section for missing (unmatched) keywords
-        st.subheader("❌ Keywords Missing in Each Resume")
-
-        for file, score in resume_scores:
-            # Extract missing keywords (keywords in job description but not in resume)
-            missing_keywords = list(job_desc_keywords - resume_keywords_dict[file])
-    
-            with st.expander(f"📄 {file} - Missing Keywords"):
-                if missing_keywords:
-                    st.write(", ".join(missing_keywords))
-                else:
-                    st.write("✅ No missing keywords! This resume covers all job description terms.")
+      
 
 # # Add a section for missing (unmatched) keywords
 # st.subheader("❌ Keywords Missing in Each Resume")
